@@ -435,7 +435,7 @@ function loadCustomRecipes() {
 }
 function downloadAndroidApp() {
     // ضع رابط جوجل درايف الخاص بك هنا
-    const googleDriveLink = "https://drive.google.com/file/d/1jGmPnQpwInBU6caiCOQ6GzR4hqfrmaKq/view?usp=drive_link";
+    const googleDriveLink = "https://drive.google.com/file/d/1pRih--tm3kxB9jdw-tn6qo3KoPJlU1He/view?usp=drive_link";
 
     // إظهار رسالة تنبيه طمأنة للمستخدم قبل التوجه للرابط
     showToast("جاري توجيهك لصفحة التحميل الآمنة عبر Google Drive...", "info", 5000);
