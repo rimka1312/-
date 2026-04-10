@@ -287,12 +287,7 @@ h2 {
 /* ====================== */
 /* الشاشات                */
 /* ====================== */
-.screen {
-    display: none;
-    position: relative;
-    z-index: 1;
-    min-height: 100dvh;
-}
+.screen { display: none; padding-top: 65px; animation: fadeIn 0.4s ease forwards; }
 .screen.active {
     display: block;
     animation: screenIn 0.4s cubic-bezier(0.34,1.1,0.64,1) both;
@@ -1450,6 +1445,10 @@ body.printing-mode #printableSection {
     position: relative;
     overflow: hidden;
     min-height: 90vh;
+}
+
+/* هذه الإضافة هي السحر الذي سيجعلها تظهر وتختفي بشكل صحيح */
+#screen-landing.active {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1668,4 +1667,21 @@ body.printing-mode #printableSection {
     0% { left: -100%; }
     20% { left: 200%; }
     100% { left: 200%; }
+}
+.ios-alert {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px dashed var(--primary);
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* لضمان عدم اختفاء المحتوى خلف النوتش في الايفون */
+body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }

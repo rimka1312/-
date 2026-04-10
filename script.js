@@ -435,6 +435,34 @@ function loadCustomRecipes() {
 }
 
 function downloadAndroidApp() {
-    const link = document.createElement('a'); link.href = "كوزينتي_1_1.0.apk"; link.download = "Cuisinety_App.apk"; 
-    document.body.appendChild(link); link.click(); document.body.removeChild(link);
+    const apkFileName = "كوزينتي_1_1.0.apk"; 
+    
+    // إنشاء عنصر رابط مخفي
+    const link = document.createElement('a');
+    link.href = apkFileName;
+    
+    // تحديد نوع الملف لضمان استجابة المتصفح بشكل صحيح
+    link.type = "application/vnd.android.package-archive";
+    link.download = "Cuisinety.apk"; 
+    
+    // إضافة خاصية التوجيه لفتح التحميل في نافذة جديدة إذا لزم الأمر
+    link.target = "_blank"; 
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // إضافة تنبيه للمستخدم في حال لم يبدأ التحميل
+    setTimeout(() => {
+        showToast("إذا لم يبدأ التحميل، تأكدي من إعطاء المتصفح صلاحية تحميل الملفات.", "info", 5000);
+    }, 2000);
+}
+// الكشف عن نوع الجهاز (ايفون أو أندرويد)
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+const androidZone = document.getElementById('android-download-zone');
+const iosZone = document.getElementById('ios-instructions-zone');
+
+if (isIOS) {
+    if (androidZone) androidZone.style.display = 'none';
+    if (iosZone) iosZone.style.display = 'block';
 }

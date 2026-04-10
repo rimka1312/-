@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="كوزينتي">
+<link rel="apple-touch-icon" href="icon.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,19 +48,27 @@
                 <p>حمّلي تطبيق <strong>"كوزينتي"</strong> على هاتفك <strong>الأندرويد</strong>، واستمتعي بتجربة أسرع وأكثر سلاسة لتنظيم طيابك اليومي بدون إنترنت.</p>
             </div>
 
-            <div class="landing-actions">
-                <button class="btn-android-download modern-btn" onclick="downloadAndroidApp()">
-                    <span class="android-icon">🤖</span>
-                    <div class="btn-text-group">
-                        <span class="btn-small-text">تطبيق الأندرويد</span>
-                        <span class="btn-large-text">تحميل (APK)</span>
-                    </div>
-                </button>
-
-             <button class="btn-text" onclick="showScreen('screen-welcome')" style="margin-top: 25px; font-weight: bold;">
-    استخدام نسخة الويب مباشرة ➔
-</button>
+           <div class="landing-actions">
+    <div id="android-download-zone">
+        <button class="btn-android-download modern-btn" onclick="downloadAndroidApp()">
+            <span class="android-icon">🤖</span>
+            <div class="btn-text-group">
+                <span class="btn-small-text">تطبيق الأندرويد</span>
+                <span class="btn-large-text">تحميل (APK)</span>
             </div>
+        </button>
+    </div>
+
+    <div id="ios-instructions-zone" style="display:none;">
+        <div class="ios-alert">
+            <p>🍎 لمستخدمي الايفون: اضغطي على زر <strong>مشاركة (Share)</strong> ثم اختاري <strong>"إضافة للشاشة الرئيسية"</strong> ليعمل كـ تطبيق.</p>
+        </div>
+    </div>
+
+    <button class="btn-web-version" onclick="showScreen('screen-welcome')">
+        استخدام نسخة الويب ➔
+    </button>
+</div>
         </div>
     </div>
 
