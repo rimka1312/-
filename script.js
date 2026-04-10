@@ -434,16 +434,16 @@ function loadCustomRecipes() {
     customs.forEach(cr => { if (!recipesDB.find(r => r.id === cr.id)) recipesDB.push(cr); });
 }
 function downloadAndroidApp() {
-    const link = document.createElement('a');
-    link.href = "كوزينتي_1_1.0.apk"; // تأكد من دقة الاسم هنا
-    link.download = "Cuisinety.apk"; // هذا الاسم الذي سيظهر للمستخدم عند الحفظ
-    link.setAttribute('type', 'application/vnd.android.package-archive');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // إظهار رسالة طمأنة للمستخدم
-    showToast("اضغطي على 'التحميل على أي حال' لبدء التثبيت", "info", 5000);
+    // ضع رابط جوجل درايف الخاص بك هنا
+    const googleDriveLink = "https://drive.google.com/file/d/1Ra1K62QTAOobr5u8GAiuWRtiwaeN_ym2/view?usp=drive_link";
+
+    // إظهار رسالة تنبيه طمأنة للمستخدم قبل التوجه للرابط
+    showToast("جاري توجيهك لصفحة التحميل الآمنة عبر Google Drive...", "info", 5000);
+
+    // فتح الرابط في نافذة جديدة
+    setTimeout(() => {
+        window.open(googleDriveLink, "_blank");
+    }, 1500);
 }
 // الكشف عن نوع الجهاز (ايفون أو أندرويد)
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
